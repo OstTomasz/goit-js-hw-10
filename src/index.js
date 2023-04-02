@@ -19,7 +19,7 @@ searchBox.addEventListener(
       fetchCountries(input).then(countries => {
         countries.forEach(country => {
           countryName = country.name.official;
-          if (countryName.toLowerCase().includes(input)) {
+          if (countryName.toLowerCase().includes(input.toLowerCase())) {
             countriesListHTML += `<li>${countryName}</li>`;
             countryList.innerHTML = countriesListHTML;
           }
