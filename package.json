@@ -14,7 +14,7 @@
     "postcss-sort-media-queries": "^5.2.0",
     "vite": "^5.4.2"
   },
-  "author": "Tomasz Ostaszewski <tomasz.ostaszewski@gmail.com>",
+  "author": "Tomasz Ostaszewski <ost.tomasz@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "flatpickr": "^4.6.13",
