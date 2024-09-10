@@ -9,8 +9,11 @@ const submit = document.querySelector(`button`);
 
 submit.addEventListener('click', e => {
   e.preventDefault();
-  let delay = delayInput.value;
-  if ((fulfilledInput.checked || rejectedInput.checked) && delay !== '') {
+  let delay = parseInt(delayInput.value);
+  if (
+    (fulfilledInput.checked || rejectedInput.checked) &&
+    (delay !== '' || delay <= 0)
+  ) {
     const fulfilled = fulfilledInput.checked;
     const createPromise = new Promise((resolve, reject) => {
       setTimeout(() => {
