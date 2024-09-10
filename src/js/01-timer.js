@@ -32,25 +32,17 @@ const options = {
 };
 
 flatpickr(picker, options);
-
+const padded = value => value.toString().padStart(2, '0');
 button.addEventListener('click', () => {
   button.disabled = true;
   picker.disabled = true;
   const interval = setInterval(() => {
     const remainingMs = userSelectedDate - Date.now();
-    outputDays.textContent = convertMs(remainingMs)
-      .days.toString()
-      .padStart(2, '0');
-    outputHours.textContent = convertMs(remainingMs)
-      .hours.toString()
-      .padStart(2, '0');
-    outputMinutes.textContent = convertMs(remainingMs)
-      .minutes.toString()
-      .padStart(2, '0');
-    outputSeconds.textContent = convertMs(remainingMs)
-      .seconds.toString()
-      .padStart(2, '0');
-    if (remainingMs < 1000) {
+    outputDays.textContent = padded(convertMs(remainingMs).days);
+    outputHours.textContent = padded(convertMs(remainingMs).hours);
+    outputMinutes.textContent = padded(convertMs(remainingMs).minutes);
+    outputSeconds.textContent = padded(convertMs(remainingMs).seconds);
+    if (remainingMs < 500) {
       clearInterval(interval);
       button.disabled = false;
       picker.disabled = false;
